@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Jumbotron, Button, Modal, ModalHeader, ModalBody, Row, Input, Form, Label} from 'reactstrap';
+import {Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Jumbotron, Button, Modal, ModalHeader, ModalBody, FormGroup, Input, Form, Label} from 'reactstrap';
 import {NavLink} from 'react-router-dom';
 
 class Header extends Component{
@@ -87,33 +87,33 @@ class Header extends Component{
                         </div>
                     </div>
                 </Jumbotron>
-                <Modal isOpen = {this.state.isModalOpen}  toggle = {this.toggleModal}>
-                    <ModalHeader toggle = {this.toggleModal}>Login</ModalHeader>
+                
+                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+                    <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
                     <ModalBody>
-                        <Form onSubmit = {this.handleLogin}>
-                            <Row>
-                                <Label htmlFor = "username">Username</Label>
-                                <Input type = "text" id = "username" name = "username" 
-                                    innerRef = {(input) => this.username = input}
-                                    />
-                            </Row>
-                            <Row>
-                                <Label htmlFor = "password">Password</Label>
-                                <Input type = "password" id = "password" name = "password" 
-                                    innerRef = {(input) => this.password = input}
-                                />
-                            </Row>
-                            <Row check>
+                    <Form onSubmit={this.handleLogin}>
+                            <FormGroup>
+                                <Label htmlFor="username">Username</Label>
+                                <Input type="text" id="username" name="username"
+                                    innerRef={(input) => this.username = input} />
+                            </FormGroup>
+                            <FormGroup>
+                                <Label htmlFor="password">Password</Label>
+                                <Input type="password" id="password" name="password"
+                                    innerRef={(input) => this.password = input}  />
+                            </FormGroup>
+                            <FormGroup check>
                                 <Label check>
-                                    <Input type = "checkbox" name = "remember" 
-                                        innerRef = {(input) => this.remember = input}
-                                    />Remember me 
+                                    <Input type="checkbox" name="remember"
+                                    innerRef={(input) => this.remember = input}  />
+                                    Remember me
                                 </Label>
-                            </Row>
-                            <Button type = "submit" value = "submit" className = "bg-primary">Login</Button>
+                            </FormGroup>
+                            <Button type="submit" value="submit" color="primary">Login</Button>
                         </Form>
                     </ModalBody>
                 </Modal>
+                
             </React.Fragment>
         );
     }

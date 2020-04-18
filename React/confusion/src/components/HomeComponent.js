@@ -14,13 +14,13 @@ function RenderCard({item, isLoding, ErrMess}){
             <h4>{ErrMess}</h4>
         );
     }
-    else
+    else 
         return (
-            <Card>
-                <CardImg src={baseUrl + item.image} alt={item.name} />>
-                <CardBody>
-                    <CardTitle>{item.name}</CardTitle>
-                    {item.designation ? <CardSubtitle>{item.designation}</CardSubtitle> : null}
+                <Card>
+                    <CardImg src={baseUrl + item.image} alt={item.name} />>
+                    <CardBody>
+                        <CardTitle>{item.name}</CardTitle>
+                        {item.designation ? <CardSubtitle>{item.designation}</CardSubtitle> : null}
                     <CardText>{item.description}</CardText>
                 </CardBody>
             </Card>
@@ -34,7 +34,7 @@ function Home(props){
                 <div className = "col-12 col-md m-1">
                     <RenderCard item = {props.dish} 
                     isLoding = {props.dishesLoading}
-                    ErrMess = {props.dishesErrMess}
+                    ErrMess = {props.dishErrMess}
                     />
                 </div>
                 <div className = "col-12 col-md m-1">
